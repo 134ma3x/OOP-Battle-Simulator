@@ -24,16 +24,22 @@ def battle(hero:hero.Hero, enemy:goblin.Goblin):
 
 def main():
     """Open the arena and introduce its first opponent."""
-    global character, goblin1
+    global character, goblins
     character = hero.Hero(name=input("Name your hero: "),type="melee")
+    if character == type(str):
+        print(character)
+        return 
 
     print(f"Welcome to {ARENA_NAME}!")
     print("༼ ᓄºل͟º ༽ᓄ   ᕦ(ò_óˇ)ᕤ")
     print("The gates are opening...")
 
-    goblin1 = goblin.Goblin("Bribble")
+    goblins = []
+    for i in range(5):
+        goblins.append(goblin.Goblin(name=i))
 
 if __name__ == "__main__":
     main()
-    while character.is_alive():
-        battle(character, goblin1)
+    for gobby in goblins:
+        battle(character, gobby)
+        

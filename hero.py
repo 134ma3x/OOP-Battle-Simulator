@@ -7,7 +7,7 @@ class Hero:
         self.name = name
         self.type = type
         if type == "melee":
-            self.health = 15
+            self.health = 150
             self.attack_power = 20
             self.armor = 10
             self.max_mana = 1
@@ -22,6 +22,7 @@ class Hero:
             self.current_mana = 10
             self.magic_power = 20
             self.magic_armor = 15
+
 
     def gambit(self):
         if random.randint(0,1):
