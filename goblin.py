@@ -8,15 +8,16 @@ class Goblin:
         self.name = name
         self.health = 100
         self.attack_power = 15
+        self.armor = 5
 
     def attack(self):
-        """Return a random amount of damage."""
-        return random.randint(1, self.attack_power)
+        """Return a random amount of damage around the attack power"""
+        rand_num = random.randint(-5,5)
+        return self.attack_power+rand_num
 
     def take_damage(self, damage):
-        """Reduce health without allowing it to fall below zero."""
-        self.health = max(0, self.health - damage)
-        print(f"{self.name} takes {damage} damage. Health: {self.health}")
+        """Reduce health"""
+        self.health -= max((damage - self.armor), 0)
 
     def is_alive(self):
         """Return True while the goblin has health remaining."""
