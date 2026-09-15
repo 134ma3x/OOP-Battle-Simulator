@@ -1,6 +1,5 @@
 import random
 
-
 class Goblin:
     """A completed character class students can examine as an OOP example."""
 
@@ -11,9 +10,8 @@ class Goblin:
         self.armor = 5
 
     def attack(self):
-        """Return a random amount of damage around the attack power"""
-        rand_num = random.randint(-5,5)
-        return self.attack_power+rand_num
+        """Return a random amount of melee damage around the attack power"""
+        return self.attack_power*((random.randint(-10,10)+100)/100)
 
     def take_damage(self, damage):
         """Reduce health"""
