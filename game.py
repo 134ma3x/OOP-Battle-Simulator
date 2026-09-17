@@ -5,6 +5,7 @@ import hero
 ARENA_NAME = "The Greatest Arena to Exist"
 
 def battle(hero:hero.Hero, enemy:goblin.Goblin):
+    """battle between players/npcs"""
     while hero.is_alive() and enemy.is_alive():
         if hero.type == "melee":
             enemy.take_damage(hero.attack())
