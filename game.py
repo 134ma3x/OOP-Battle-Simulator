@@ -1,4 +1,5 @@
 import goblin
+import boss
 import hero
 
 
@@ -16,12 +17,14 @@ def battle(hero:hero.Hero, enemy:goblin.Goblin):
     if hero.is_alive():
         print(f"{hero.name} won")
         return
-    if enemy.is_alive():
+    elif enemy.is_alive():
         print(f"{enemy.name} won")
         return
+    else:
+        print(f"{hero.name} and {enemy.name} caused mutually assured destruction")
 
 def main():
-    global goblins, character
+    global enemies, character
     """Open the arena and introduce its first opponent."""
 
     character = hero.Hero(input("Name your hero: "))
@@ -30,15 +33,12 @@ def main():
     print("༼ ᓄºل͟º ༽ᓄ   ᕦ(ò_óˇ)ᕤ")
     print("The gates are opening...")
 
-    goblins = []
-    for i in range(3):
-        goblins.append(goblin.Goblin(name=i))
-
-    goblin.take_damage(character.gambit())
-    print(f"Is the goblin still alive? {goblin.is_alive()} with {goblin.health}hp")
-
+    enemies = []
+    #for i in range(3):
+    #    enemies.append(goblin.Goblin(name=f"Goblin {i+1}"))
+    enemies.append(boss.Boss("The King"))
 
 if __name__ == "__main__":
     main()
-    for gobby in goblins:
-        battle(character, gobby)
+    for enemy in enemies:
+        battle(character, enemy)

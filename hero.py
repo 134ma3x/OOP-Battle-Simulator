@@ -4,7 +4,7 @@ class Hero:
     """Hero class with attack, take_damage, and is_alive"""
     def __init__(self, name):
         self.name = name
-        self.health = 150
+        self.health = 200
         self.attack_power = 20
         self.armor = 10
 
