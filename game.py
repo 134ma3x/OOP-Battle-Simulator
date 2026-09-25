@@ -21,6 +21,7 @@ def battle(hero:hero.Hero, enemy:goblin.Goblin):
         return
 
 def main():
+    global goblins, character
     """Open the arena and introduce its first opponent."""
 
     character = hero.Hero(input("Name your hero: "))
