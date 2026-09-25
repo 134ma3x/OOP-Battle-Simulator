@@ -1,6 +1,7 @@
 import goblin
 import boss
 import hero
+import random
 
 
 ARENA_NAME = "The Greatest Arena to Exist"
@@ -8,7 +9,10 @@ ARENA_NAME = "The Greatest Arena to Exist"
 def battle(hero:hero.Hero, enemy:goblin.Goblin):
     """battle between players/npcs"""
     while hero.is_alive() and enemy.is_alive():
-        enemy.take_damage(hero.attack())
+        if random.randint(0,1):
+            enemy.take_damage(hero.gambit())
+        else:
+            enemy.take_damage(hero.attack())
         if enemy.is_alive():
             hero.take_damage(enemy.attack())
         print(f"{hero.name} has {hero.health} health")
